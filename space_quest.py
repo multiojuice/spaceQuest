@@ -1,19 +1,22 @@
 import math
 import sys
-proceed = input("Welcome to Tsiolkovsky rocket equation, input Anything to continue: ")
-
+def getRocketNumber(stringInput,bot,top):
+    while True:
+        try:
+            num = int(input("Enter your value for " + stringInput))
+            break
+        except ValueError:
+            print("Please enter a number...")
+    while bot> num or num > top:
+        num = int(input("Please enter a legitament value for " + stringInput))
+    return num
 print("The Tsiolkovsky rocket equation is represented as")
 print("DeltaV=Ve*ln*(Mo/Mf)")
-V = int(input("Input your value for effective exhaust velocity: "))
-O = int(input("Input your value for initial total mass: "))
-while (O <= 0):
-    O = int(input("Input a valid value for your value for initial total mass: "))
-F= int(input("Input your value for final total mass: "))
-while (F <= 0):
-    F = int(input("Input a valid value for your value for final total mass: "))
-   
+V = getRocketNumber("Effective Exhaust Velocity: ", 400, 5000)
+O = getRocketNumber("Initial Mass: ", 0, 1000000000)
+F = getRocketNumber("Final Mass: ",0 ,1000000000)
 answer = (V*(math.log(O/F)))
-print("Your maximum change in velocity is",answer)
+print("Your maximum change in Velocity is", answer)
     
           
 
