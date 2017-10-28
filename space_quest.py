@@ -16,7 +16,7 @@ V = getRocketNumber("Effective Exhaust Velocity: ", 400, 5000)
 O = getRocketNumber("Initial Mass: ", 0, 1000000000)
 F = getRocketNumber("Final Mass: ",0 ,1000000000)
 answer = (V*(math.log(O/F)))
-print("Your maximum change in Velocity is", answer)
+print("Your maximum change in Velocity is: ", answer)
     
           
 
